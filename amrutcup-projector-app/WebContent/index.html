@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>AmrutCup Volleyball</title>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!-- <script src="js/angular-route.js"></script>  -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script type="text/javascript">
+        var base_path = "http://volleyball-app-backend-dev-elb-800547385.us-east-1.elb.amazonaws.com:80/spglobal-reference-api-template-1.0.0/volleyball-app/"
+
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/core.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body ng-app="AmrutcupVolleyball" ng-controller="courtController">
+    <div id="outerTable">
+        <table width="100%">
+            <thead>
+                <tr id="schedules">
+                    <th align="center">
+                        <h1 align="center">Amrutcup Volleyball tournament 2018</h1>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+        <table width="100%">
+            <tr>
+                <td ng-repeat="court in courtsList" width="50%" style="border-left: 1px solid; border-right: 1px solid; border-color: white">
+                    <table width="100%">
+                        <tr>
+                            <td colspan="2">
+                                <div class="head1" style="text-align: center">Court # {{court.courtNo}}</div>
+                            </td>
+                        </tr>
+                        <div>&nbsp</div>
+
+                        <tr>
+                            <td width="50%" align="center"" >
+                                <span class="head2">{{court.homeTeamName}}</span>
+                            </td>
+                            <td width="50%" align="center">
+                                <span class="head2">{{court.visitorTeamName}}</span>
+                            </td>
+                        </tr>
+                        <div>&nbsp</div>
+                        <tr>
+                            <td width="50%" align="center" class="score"><span class="scorebox">{{court.homeTeamScore}}</span></td>
+                            <td width="50%" align="center" class="score"><span class="scorebox">{{court.visitorTeamScore}}</span></td>
+                        </tr>
+                    </table>
+                    <div>&nbsp</div>
+                </td>
+            </tr>
+        </table>
+        <div ng-repeat="court in courtsList">
+        </div>
+        <table width="100%">
+            <tr id="schedules">
+                <th><span><img src="images/bapa1.png" /></span></th>
+                <th id="schedules">
+                    <div style="text-align: center">Inpired By: Pramukh Swami Maharaj <br/>Blessings By: Mahant Swami Maharaj</div>
+                </th>
+                <th><span><img src="images/bapa2.png" /></span></th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function timedRefresh(timeoutPeriod) {
+            setTimeout("location.reload(true);", timeoutPeriod);
+        }
+
+        window.onload = timedRefresh(5000);
+
+    </script>
+</body>
+
+</html>

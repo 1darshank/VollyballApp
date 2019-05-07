@@ -1,0 +1,495 @@
+{
+	"id": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+	"name": "VolleyballApp Admin",
+	"description": "",
+	"order": [
+		"f8ed0d32-108a-8ee3-5c13-3fdfcec4fb27",
+		"be514069-4be0-ba11-6c67-f74aeb4ff291",
+		"81a2c731-b1cd-524d-eabe-ef39502c9d10",
+		"fb67acb5-6683-b1a2-4cb7-5575db8b4dab",
+		"e25dc558-1a4c-f59f-c2fb-352207e313b5",
+		"fa547be1-cb48-918e-d96d-bf67e4aa5513",
+		"4090460a-e192-0c83-dc3a-c49ba9919b47",
+		"17993e07-831f-80cb-2918-3e99e30e9eb0",
+		"936c67fd-052f-f14c-4026-1aad90452fc2",
+		"8b6e88ac-df13-37e2-7597-44e6c702a489",
+		"ef694d05-6d99-9ef8-cc8d-3efb946e7ccf",
+		"612497d2-55cb-9c13-6140-7816361944d8",
+		"9b9ec02c-f741-1299-fb02-e321a67044fa",
+		"3abda266-37f7-2dbd-d6ad-669129c0be8c"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1520435894425,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "17993e07-831f-80cb-2918-3e99e30e9eb0",
+			"headers": "",
+			"headerData": [],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/teamNames",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520487174601,
+			"name": "Retrieve All Team Names",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": []
+		},
+		{
+			"id": "3abda266-37f7-2dbd-d6ad-669129c0be8c",
+			"headers": "",
+			"headerData": [],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/games?_s=courtNo==1,courtNo==2;status==A",
+			"queryParams": [
+				{
+					"key": "_s",
+					"value": "courtNo==1,courtNo==2;status==A",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520487197575,
+			"name": "Retrieve Live Games for Projector",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": []
+		},
+		{
+			"id": "4090460a-e192-0c83-dc3a-c49ba9919b47",
+			"headers": "",
+			"headerData": [],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/teams?_s=division.id==1",
+			"queryParams": [
+				{
+					"key": "_s",
+					"value": "division.id==1",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520487171815,
+			"name": "Retrieve Team List by Division",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": []
+		},
+		{
+			"id": "612497d2-55cb-9c13-6140-7816361944d8",
+			"headers": "",
+			"headerData": [],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/games",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520487192318,
+			"name": "Retrieve All Games",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": []
+		},
+		{
+			"id": "81a2c731-b1cd-524d-eabe-ef39502c9d10",
+			"headers": "Content-Type: application/json\nuserName: {{username}}\ntoken: {{token}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "userName",
+					"value": "{{username}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/games/5/undo-score?teamId=4",
+			"queryParams": [
+				{
+					"key": "teamId",
+					"value": "4",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520490012892,
+			"name": "Undo Score ",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": [],
+			"rawModeData": "{\n\t\"teamId\" : 2\n}"
+		},
+		{
+			"id": "8b6e88ac-df13-37e2-7597-44e6c702a489",
+			"headers": "",
+			"headerData": [],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/schedules?_s=scheduleGroup.status==A",
+			"queryParams": [
+				{
+					"key": "_s",
+					"value": "scheduleGroup.status==A",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520487122741,
+			"name": "Retrieve Schedules",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": []
+		},
+		{
+			"id": "936c67fd-052f-f14c-4026-1aad90452fc2",
+			"headers": "",
+			"headerData": [],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/teams?_s=name==Inman Ave",
+			"queryParams": [
+				{
+					"key": "_s",
+					"value": "name==Inman Ave",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520487179413,
+			"name": "Retrieve Team Detail by Team Name",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": []
+		},
+		{
+			"id": "9b9ec02c-f741-1299-fb02-e321a67044fa",
+			"headers": "",
+			"headerData": [],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/games/team-standing",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520496460283,
+			"name": "Team Standing",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": []
+		},
+		{
+			"id": "be514069-4be0-ba11-6c67-f74aeb4ff291",
+			"headers": "Content-Type: application/json\nuserName: {{username}}\ntoken: {{token}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "userName",
+					"value": "{{username}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/games/5/add-score?teamId=4",
+			"queryParams": [
+				{
+					"key": "teamId",
+					"value": "4",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520489982818,
+			"name": "Add Score ",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": [],
+			"rawModeData": "{\n\t\"teamId\" : 2\n}"
+		},
+		{
+			"id": "e25dc558-1a4c-f59f-c2fb-352207e313b5",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "userName",
+					"value": "swami@akshardham.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "shreeji",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520449979413,
+			"name": "Login",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": []
+		},
+		{
+			"id": "ef694d05-6d99-9ef8-cc8d-3efb946e7ccf",
+			"headers": "",
+			"headerData": [],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/games?_s=status==A",
+			"queryParams": [
+				{
+					"key": "_s",
+					"value": "status==A",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520487186368,
+			"name": "Live Score",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": []
+		},
+		{
+			"id": "f8ed0d32-108a-8ee3-5c13-3fdfcec4fb27",
+			"headers": "userName: {{username}}\ntoken: {{token}}\n",
+			"headerData": [
+				{
+					"key": "userName",
+					"value": "{{username}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/schedules/2/start-game",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520489942464,
+			"name": "Start Game",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": []
+		},
+		{
+			"id": "fa547be1-cb48-918e-d96d-bf67e4aa5513",
+			"headers": "",
+			"headerData": [],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/divisions?_s=status==A",
+			"queryParams": [
+				{
+					"key": "_s",
+					"value": "status==A",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520487168853,
+			"name": "Retrieve Divisions List",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": []
+		},
+		{
+			"id": "fb67acb5-6683-b1a2-4cb7-5575db8b4dab",
+			"headers": "Content-Type: application/json\nuserName: {{username}}\ntoken: {{token}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "userName",
+					"value": "{{username}}",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{protocol}}://{{host}}:{{port}}/{{admin-context}}/games/5/finish-game",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1520490052411,
+			"name": "Finish Game",
+			"description": "",
+			"collectionId": "655edf30-bc8a-9d2c-0a7f-df733948312b",
+			"responses": [],
+			"rawModeData": "{\n\t\"teamId\" : 2\n}"
+		}
+	]
+}

@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Amrut Cup 2018</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../../css/main.css"/>
+    <link rel="stylesheet" th:href="@{/css/login.css}" href="../../css/login.css"/>
+
+</head>
+<body>
+<div class="login">
+    <div id="login_header">
+        <div id="login_header_text">
+            Amrut Cup 2018
+        </div>
+        <div id="login_header_text" style="font-size: 15px; font-color: red;">
+            <span th:text="${error}"/>
+        </div>
+    </div>
+
+    <form action="/login" method="post">
+        <input type="text" placeholder="Username" id="username" name="userName">
+        <input type="password" placeholder="password" id="password" name="password">
+        <br>
+        <input type="submit" class="login_button" value="Sign In">
+    </form>
+</div>
+<div class="shadow"></div>
+
+<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>

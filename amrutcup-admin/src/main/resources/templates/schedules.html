@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Amrut Cup 2018</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/core.css}" href="../css/core.css"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../css/main.css"/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="schedules">Amrut Cup</a> |
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="schedules">Schedules</a> |
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="logout">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Schedules</h1>
+        <table id="schedules">
+            <tbody>
+            <tr>
+                <th>Court#</th>
+                <th>Game#</th>
+                <th>Round</th>
+                <th>Home Team</th>
+                <th>Visitor Team</th>
+                <th></th>
+            </tr>
+            <tr th:each="schedule: ${schedules}">
+                <td th:text="${schedule.courtNo}" />
+                <td th:text="${schedule.gameNo}" />
+                <td th:text="${schedule.round}" />
+                <td th:text="${schedule.homeTeamName}" />
+                <td th:text="${schedule.visitorTeamName} + ${schedule.status}" />
+                <td>
+                    <div th:switch="${schedule.status}">
+                        <span th:case="'C'" class="button">Completed</span>
+                        <span th:case="'P'"><a th:href="@{/startGame(id=${schedule.id})}" class="button">Start Game</a></span>
+                        <span th:case="'I'" ><a th:href="@{/scoring(courtId=${schedule.courtNo})}" class="button">Resume Scoring</a></span>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<!-- /.container -->
+
+<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>

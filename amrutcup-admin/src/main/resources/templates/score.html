@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Amrut Cup 2018</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/core.css}" href="../css/core.css"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../css/main.css"/>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="schedules">Amrut Cup</a> |
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="schedules">Schedules</a> |
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="logout">Logout</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Live Score</h1>
+        <p>Court: <span th:text="${scoring.courtNo}"></span></p>
+        <p>Game: <span th:text="${scoring.gameNo}"></span></p>
+        <p>Round: <span th:text="${scoring.round}"></span></p>
+        <p>StartTime: <span th:text="${scoring.matchStartTime}"></span></p>
+        <table id="schedules">
+            <tbody>
+            <tr>
+                <th th:text="${scoring.homeTeamName}" style="text-align: center;" colspan="2"/>
+                <th th:text="${scoring.visitorTeamName}" style="text-align: center;" colspan="2"/>
+            </tr>
+            <tr>
+                <td style="text-align: center;" colspan="2">
+                    <div class="score" th:text="${scoring.homeTeamScore}"/>
+                </td>
+                <td style="text-align: center;" colspan="2">
+                    <div class="score" th:text="${scoring.visitorTeamScore}"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center;">
+                    <a th:href="@{/increment(gameId=${scoring.id}, teamId=${scoring.homeTeamId}, courtId=${scoring.courtNo})}"
+                       class="test"><img
+                            src="../images/plus.png" style="width:75px;height:75px;"/></a>
+                </td>
+                <td style="text-align: center;">
+                    <a th:href="@{/decrement(gameId=${scoring.id}, teamId=${scoring.homeTeamId}, courtId=${scoring.courtNo})}"
+                       class="test"><img
+                            src="../images/minus.png" style="width:75px;height:75px;"/></a>
+
+                </td>
+                <td style="text-align: center;">
+                    <a th:href="@{/increment(gameId=${scoring.id}, teamId=${scoring.visitorTeamId}, courtId=${scoring.courtNo})}"
+                       class="test"><img
+                            src="../images/plus.png" style="width:75px;height:75px;"/></a>
+                </td>
+                <td style="text-align: center;"><a
+                        th:href="@{/decrement(gameId=${scoring.id}, teamId=${scoring.visitorTeamId}, courtId=${scoring.courtNo})}"
+                        class="test"><img
+                        src="../images/minus.png" style="width:75px;height:75px;"/></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div><a th:href="@{/finish(gameId=${scoring.id})}" class="button" onclick="myFunction()">Finish Game</a></div>
+</div>
+<!-- /.container -->
+
+<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>

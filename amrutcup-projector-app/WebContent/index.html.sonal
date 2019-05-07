@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>AmrutCup Volleyball</title>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!-- <script src="js/angular-route.js"></script>  -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script type="text/javascript">
+        var base_path = "http://volleyball-app-backend-dev-elb-800547385.us-east-1.elb.amazonaws.com:80/spglobal-reference-api-template-1.0.0/volleyball-app/"
+
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/core.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body ng-app="AmrutcupVolleyball" ng-controller="courtController">
+    <div id="outerTable">
+        <table>
+            <thead>
+                <tr id="schedules">
+                    <th id="shedules" colspan="4">Amrutcup Volleyball tournament 2018 </th>
+                </tr>
+            </thead>
+            <tr>
+                <td ng-repeat="court in courtsList" colspan="2"  width="50%">
+                    <div id="court{{$index + 1}}">
+                        <table id="court{{$index + 1}}Table"   width="100%">
+                            <tr>
+                                <td colspan="2">Court {{court.courtNo}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{court.homeTeamName}}</td>
+                                <td>{{court.visitorTeamName}}</td>
+                            </tr>
+                            <tr id="score">
+                                <td>{{court.homeTeamScore}}</td>
+                                <td>{{court.visitorTeamScore}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr id="schedules" colspan="4">
+                <th rowspan="2"> <img src="images/" />
+                </th>
+                <th id="schedules"> Inpired By: Pramukh Swami Maharaj </th>
+                <th rowspan="2" id="schedules"> <img src="images/" />
+                </th>
+            </tr>
+            <tr id="schedules" colspan="4">
+                <th id="schedules"> Blessings By: Mahant Swami Maharaj </th>
+            </tr>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

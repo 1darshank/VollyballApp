@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BAPS Volleyball Tournament</title>
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="js/amrutcup.js"></script>
+    <script src="js/teams.js"></script>
+    <script src="js/schedule.js"></script>
+	<script src="js/live.js"></script>
+	<script src="js/point.js"></script>
+	<script src="js/result.js"></script>
+</head>
+
+<body>
+    <!--<div class="banner-bg" id="home">
+     </div>-->
+
+     <center><img src="./img/cover.jpg" width="100%"></center>
+	
+    <div class="responsive-header visible-xs visible-sm">
+        <div class="container" style="margin-top: -10px;">
+            <a href="#" class="toggle-menu"><i class="fa fa-bars"></i></a>
+            <div class="main-navigation responsive-menu">
+                <ul class="navigation">
+				
+                    <<li><a href="#home" id="home_btn_resp">Home</a></li>
+                    <li><a href="#team" id="team_btn_resp">Team</a></li>
+                    <li><a href="#schedule" id="schedule_btn_resp" onclick="schedule_fun()">Schedule</a></li>
+                    <li><a href="#point_table" id="point_btn_resp" onclick="team_standing()">Team Standing</a></li>
+					<li><a href="#result_table" id="result_btn_resp" onclick="game_result()">Game Results</a></li>
+                    <li><a href="#live_score" id="live_btn_resp" onclick="live_fun()">Live Score</a></li>
+					<li><a href="#point_table1" id="point_btn1_resp" >Rule Book</a></li>
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar-menu hidden-xs hidden-sm">
+        <div class="top-section">
+            <div class="profile-image">
+                <img src="img/profile.jpg" alt="Aksharpurshottam">
+            </div>
+		
+		<!-- <h3 class="profile-title">BAPS Volleyball</h3>
+            <p class="profile-description">Edison Mandir</p> -->
+			
+        </div>
+        <!-- top-section -->
+        <div class="main-navigation">
+            <ul class="navigation">
+                <li><a href="#home" id="home_btn">Home</a></li>
+                <li><a href="#team" id="team_btn">Team</a></li>
+                <li><a href="#schedule" id="schedule_btn" onclick="schedule_fun()">Schedule</a></li>
+                <li><a href="#point_table" id="point_btn" onclick="team_standing()">Team Standing</a></li>
+				<li><a href="#result_table" id="result_btn" onclick="game_result()">Game Result</a></li>
+                <li><a href="#live_score" id="live_btn" onclick="live_fun()">Live Score</a></li>
+				<li><a href="#point_table1" id="point_btn1">Rule Book</a></li>
+				<!-- did a point_btn1 for a Rule Book href for debug -->
+				
+            </ul>
+        </div>
+        <!-- .main-navigation -->
+
+    </div>
+    <!-- .sidebar-menu -->
+
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="fluid-container">
+
+            <div class="content-wrapper">
+
+                <!-- TEAM -->
+                <div class="page-section" id="team">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">
+							<p  id="p_rule">Team Selection</P></h4>
+							<div id="span_team">
+                            <span id="teams_span_dropdown">
+                            <span class="widget-title">Division: <select name="divisions"><option>---</option></select></span>
+                            <span class="widget-title">Team: <select name="teams"><option>---</option></select></span>
+                            </span>
+							</div>
+							<div class = "hideMe" id="team_div" ></div>
+                            <span id="teams_span"></span>
+                            <span id="playersTableSpan">
+                                <table id="playersTable">
+                                </table>
+                            </span>
+							
+                            <hr>
+							<div><a href="#" onclick="manu_btn()" ><button type="button" >Go to Menu!</button></a></div>
+                        </div>
+                    </div>
+					
+                    <!-- #TEAM -->
+                </div>
+
+                <!-- SCHEDULE -->
+                <div class="page-section" id="schedule">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">
+							<p  id="p_rule">Schedule</P></h4>
+                            
+                                <div id="game_div">
+
+                                </div>
+
+                        </div>
+                    </div>
+					
+                    <hr>
+					<div><a href="#" onclick="manu_btn()"><button type="button">Go to Menu!</button></a></div>
+                </div>
+
+
+
+                <!-- POINT TABLE -->
+                <div class="page-section" id="point_table">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">
+							<p  id="p_rule">Team Standing</P></h4>
+                            <div id="point_div">
+
+                                </div>
+
+                            <hr>
+							<div><a href="#" onclick="manu_btn()"><button type="button" >Go to Menu!</button></a></div>
+                        </div>
+                    </div>
+                    <!-- #POINTTABLE -->
+                </div>
+				
+				
+				<!-- GAME RESULT -->
+                <div class="page-section" id="result_table">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">
+							<p  id="p_rule">Game Result</P></h4>
+                            <div id="result_div">
+
+                                </div>
+							
+                            <hr>
+							<div><a href="#" onclick="manu_btn()"><button type="button" >Go to Menu!</button></a></div>
+                        </div>
+                    </div>
+                    <!-- #GAMERESULT -->
+                </div>
+                <!-- LIVESCORE -->
+                <div class="page-section" id="live_score">
+				
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title">
+							<p  id="p_rule">Live Score<img src="img/live.gif" width="100px" height="50px" alt="Volton"></P></h4>
+
+                            <p id="hide_p">Wait for 3 sec!!!!</p>
+							<div id="live_div">
+								
+                                </div>
+							
+                            <hr>
+							<div><a href="#" onclick="manu_btn()"><button type="button">Go to Menu!</button></a></div>
+                        </div>
+                    </div>
+                    <!-- #LIVESCORE -->
+                </div>
+				
+				<!-- Rule Book -->
+				<!-- Here Did a point_table1 for Rule Book to debug a code -->
+                <div class="page-section" id="point_table1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="widget-title"><p id="p_rule">Game Rules</P></h4>
+							
+							<div id="game_rule">
+							<ul class="a">
+								<li>Each game will be 25 points rally scoring. Wins by 2 points difference (i.e. 23/25).</li>
+								<li>Point Counts including On the line/Service Net.(Keep Playing).</li>
+								<li>Net touch or Carry calls will be made by Referee.</li>
+								<li>Maximum 3 hits allowed in each side.</li>
+								<li>All balls must go over the net.</li>
+								<li>Each team must be present 5 mins before their schedule game time. 
+									Waiting time is only for 10 mins
+									from schedule time else team present at the court would proceed for next round. 
+									No points will be given to the absent team.</li>
+								<li>Rotation is mandatory. Players should rotate clockwise after service break.</li>
+								<li>Service is as per Rotation. One player can not continue service throughout the Game.</li>
+															
+							</ul>                            
+							</div>
+							
+                            <hr>
+							<div><a href="#" onclick="manu_btn()"><button type="button">Go to Menu!</button></a></div>
+                        </div>
+                    </div>
+                    <!-- #Rule Book -->
+                </div>
+						
+				
+
+
+						
+                <div class="row" id="footer">
+				
+				
+                    <div class="col-md-12 text-center">
+                        <p class="copyright-text">Copyright &copy; Amrut Cup Torunament, 2018</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="js/vendor/jquery-1.10.2.min.js"></script>
+    <script src="js/min/plugins.min.js"></script>
+    <script src="js/min/main.min.js"></script>
+
+</body>
+
+</html>
